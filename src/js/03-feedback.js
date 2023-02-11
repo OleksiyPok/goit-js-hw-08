@@ -30,7 +30,7 @@ function restoreData() {
 }
 
 function getFromLocalStorage() {
-  data = JSON.parse(localStorage.getItem(FORM_DATA_KEY));
+  let data = JSON.parse(localStorage.getItem(FORM_DATA_KEY));
   if (!data) return {};
   return data;
 }
