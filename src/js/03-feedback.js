@@ -10,7 +10,7 @@ let formData = {};
 form.addEventListener('input', throttle(onInput, 500));
 form.addEventListener('submit', onSubmitForm);
 
-getFromLocalStorage();
+// getFromLocalStorage();
 
 function onInput(e) {
   formData = JSON.parse(localStorage.getItem(FORM_DATA));
