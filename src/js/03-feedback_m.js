@@ -15,13 +15,19 @@ function onSubmitForm(e) {
     elements: { email, message },
   } = formRef;
 
-  localStorage.removeItem(DATA_FORM_STORAGE_KEY);
-  formRef.reset();
-  formData = {};
+  console.log({ email: email.value, message: message.value });
+
+  clearFormData();
 }
 
 function onTextInput(e) {
   formData[e.target.name] = e.target.value;
+
+  setDataForm(formData);
+  zz;
+}
+
+function setDataForm() {
   localStorage.setItem(DATA_FORM_STORAGE_KEY, JSON.stringify(formData));
 }
 
@@ -41,4 +47,10 @@ function onRestoreDataField() {
   }
 
   return { ...savedDataForm };
+}
+
+function clearFormData() {
+  localStorage.removeItem(DATA_FORM_STORAGE_KEY);
+  formRef.reset();
+  formData = {};
 }
